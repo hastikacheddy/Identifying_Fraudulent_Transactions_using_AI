@@ -15,3 +15,13 @@ However, performance varies when applied to the real dataset. Among the evaluate
 
 ### Conclusion
 This repository underscores the promise of XGBoost and Decision Tree algorithms for credit card fraud detection. Nonetheless, further validation on diverse datasets is imperative to ascertain their generalizability and robustness. Future research should prioritize evaluating these algorithms across multiple real-world datasets to establish their effectiveness and suitability for integration into fraud detection systems.
+
+Below are some screenshots of the web interface that illustrate system performance in identifying fraudulent and non-fraudulent data. The first screenshot shows the system's reaction when entering non-fraudulent data and correctly identifies it as non-fraudulent. Conversely, the second screenshot shows the system's reaction to entering fraudulent data and correctly classifies it as fraudulent. These screenshots serve as visual evidence of the system's effectiveness in distinguishing between fraudulent and non-fraudulent data.
+
+![FDS2](https://github.com/hastikacheddy/Identifying_Fraudulent_Transactions_using_AI/assets/59787014/284d2b8e-7dc2-4d69-b878-88a6c13f5c1f)
+![FDS2](https://github.com/hastikacheddy/Identifying_Fraudulent_Transactions_using_AI/assets/59787014/284d2b8e-7dc2-4d69-b878-88a6c13f5c1f)
+![FDS1](https://github.com/hastikacheddy/Identifying_Fraudulent_Transactions_using_AI/assets/59787014/79c17ba4-b015-4c79-938f-11d3bb0dac72)
+![FDS1](https://github.com/hastikacheddy/Identifying_Fraudulent_Transactions_using_AI/assets/59787014/79c17ba4-b015-4c79-938f-11d3bb0dac72)
+
+
+
