@@ -1,0 +1,123 @@
+
+    <!DOCTYPE html>
+    <!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="UTF-8">
+        <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+        <link rel="stylesheet" href="/static/setting2.css">
+        <!-- Boxicons CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       </head>
+    <body>
+      <section class="home-section">
+          <div class="text">Fraud Detection System</div>
+  <div class="container">
+    <div class="title">Transaction Details</div>
+    <div class="content">
+      <form action="{{url_for('predict')}}" method="post">
+        <div class="user-details">
+            <div class="input-box">
+              <span class="details">Distance from Home</span>
+              <input type="text" name="distance_from_home" placeholder="Enter distance from home" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Distance from Last Transaction</span>
+              <input type="text" name="distance_from_last_transaction" placeholder="Enter distance from last transaction" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Ratio to Median Purchase Price</span>
+              <input type="text" name="ratio_to_median_purchase_price" placeholder="Enter ratio to median purchase price" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Used Chip</span>
+              <div class="category">
+                <label for="dot-1">
+                  <input type="radio" name="used-chip" id="dot-1" value="1">
+                  <span class="dot one"></span>
+                  <span class="gender">Yes</span>
+                </label>
+                <label for="dot-2">
+                  <input type="radio" name="used-chip" id="dot-2" value="0">
+                  <span class="dot two"></span>
+                  <span class="gender">No</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="input-box">
+              <span class="details">Used Pin Number</span>
+              <div class="category">
+                <label for="dot-3">
+                  <input type="radio" name="used-pin-number" id="dot-3" value="1">
+                  <span class="dot three"></span>
+                  <span class="gender">Yes</span>
+                </label>
+                <label for="dot-4">
+                  <input type="radio" name="used-pin-number" id="dot-4" value="0">
+                  <span class="dot four"></span>
+                  <span class="gender">No</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="input-box">
+              <span class="details">Online Order</span>
+              <div class="category">
+                <label for="dot-5">
+                  <input type="radio" name="online-order" id="dot-5" value="1">
+                  <span class="dot five"></span>
+                  <span class="gender">Yes</span>
+                </label>
+                <label for="dot-6">
+                  <input type="radio" name="online-order" id="dot-6" value="0">
+                  <span class="dot six"></span>
+                  <span class="gender">No</span>
+                </label>
+              </div>
+            </div>
+            
+                     
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+  </div>
+ </section>
+ <section class="one-third-section">
+ <div class="wrapper-center">
+  <div class="progress-bar">
+    <svg class="progress" data-progress="{{result}}" x="0px" y="0px" viewBox="0 0 80 80">
+      <path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+      <path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+      <text class="value" x="50%" y="55%">0%</text>
+      <text class="text" x="50%" y="115%">The transaction is <br> <big>{{ prediction_text }}</big> </text>
+    </svg>
+  </div>
+</div>
+
+
+
+<script>
+
+  var forEach = function (array, callback, scope) {
+    for (var i = 0; i < array.length; i++) {
+      callback.call(scope, i, array[i]);
+    }
+  };
+  window.onload = function(){
+    var max = -219.99078369140625;
+    forEach(document.querySelectorAll('.progress'), function (index, value) {
+    percent = value.getAttribute('data-progress');
+      value.querySelector('.fill').setAttribute('style', 'stroke-dashoffset: ' + ((100 - percent) / 100) * max);
+      value.querySelector('.value').innerHTML = percent + '%';
+    });
+  }
+</script>
+  
+</body>
+</html>
